@@ -6,6 +6,7 @@ package honn.ru.is.referencemanager;
     We will treat the person's email as its identifier
  */
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Borrower {
@@ -59,11 +60,16 @@ public class Borrower {
         this.publication = publication;
     }
 
+    private String formatDate(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.YYYY");
+        return format.format(date);
+    }
+
     @Override
     public String toString() {
         return "Borrower ID: " + this.borrowerEmail + "\n" +
-                "Borrow Date: " + this.borrowDate + "\n" +
-                "Return Date: " + this.returnDate + "\n" +
+                "Borrow Date: " + formatDate(this.borrowDate) + "\n" +
+                "Return Date: " + formatDate(this.returnDate) + "\n" +
                 "Publication: " + this.publication + "\n";
     }
 }
