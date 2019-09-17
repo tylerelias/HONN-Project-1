@@ -5,7 +5,7 @@ package honn.ru.is.referencemanager;
        Has the information regarding the person borrowing a publication
  */
 
-public class Person {
+public class PersonTest {
     public String firstName;
     public String lastName;
     public String email;
@@ -13,9 +13,9 @@ public class Person {
     public String address;
 
     // empty constr
-    Person() {}
+    PersonTest() {}
 
-    Person(String firstName, String lastName, String email, String phoneNumber, String address) {
+    public PersonTest(String firstName, String lastName, String email, String phoneNumber, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
