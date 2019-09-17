@@ -7,9 +7,9 @@ public class Publication {
     int year;
     boolean type; // 1 = printed, 0 = electronic
 
-    Publication() {}
+    public Publication() {}
 
-    Publication(String editorName, String title, String journal, int year, boolean type) {
+    public Publication(String editorName, String title, String journal, int year, boolean type) {
         this.editorName = editorName;
         this.title = title;
         this.journal = journal;
@@ -68,6 +68,6 @@ public class Publication {
                 "Title: " + this.title + "\n" +
                 "Journal: " + this.journal + "\n" +
                 "Year: " + this.year + "\n" +
-                "Type: " + getTypeName(this.type);
+                "Type: " + getTypeName(this.type) + "\n";
     }
 }
