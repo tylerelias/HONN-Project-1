@@ -6,6 +6,7 @@ package honn.ru.is.referencemanager;
 import honn.ru.is.referencemanager.fakedata.FakeBorrowers;
 import honn.ru.is.referencemanager.test.BorrowerTest;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -14,9 +15,4 @@ public class ListPublications {
     FakeBorrowers fakeBorrowers = new FakeBorrowers();
     List<Borrower> dummyList = fakeBorrowers.dummyList();
 
-    ListPublications() {}
-
-    ListPublications(GregorianCalendar lookupDate) {
-
-    }
 }

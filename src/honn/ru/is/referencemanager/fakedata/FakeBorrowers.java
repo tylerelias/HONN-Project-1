@@ -2,6 +2,12 @@ package honn.ru.is.referencemanager.fakedata;
 
 import honn.ru.is.referencemanager.Borrower;
 
+/*
+    TEMP SOLUTION TO NO DATA BEING GIVEN AS OF 17/09
+    FakeBorrowers.java creates fake examples of borrowers
+    and returns a ArrayList of them
+ */
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
