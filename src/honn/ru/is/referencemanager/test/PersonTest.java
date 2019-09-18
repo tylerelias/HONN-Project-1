@@ -7,8 +7,5 @@ public class PersonTest {
 
         Person person1 = new Person("Tyler", "Jones", "Hi@you.cool", "222-3333", "Home 42");
         System.out.print(person1.toString());
-
-
-
     }
 }
