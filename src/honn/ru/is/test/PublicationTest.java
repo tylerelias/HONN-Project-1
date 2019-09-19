@@ -1,7 +1,7 @@
-package honn.ru.is.referencemanager.test;
+package honn.ru.is.test;
 
-import honn.ru.is.referencemanager.Publication;
-import honn.ru.is.referencemanager.exception.PublicationException;
+import honn.ru.is.Publication;
+import honn.ru.is.exception.PublicationException;
 
 public class PublicationTest {
     public static void main(String[] args) {

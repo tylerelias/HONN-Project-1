@@ -1,4 +1,4 @@
-package honn.ru.is.referencemanager;
+package honn.ru.is;
 
 /*
     Borrower.java
@@ -10,10 +10,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Borrower {
-    public String borrowerEmail;
-    public Date borrowDate;
-    public Date returnDate;
-    public String publication;
+    private String borrowerEmail;
+    private Date borrowDate;
+    private Date returnDate;
+    private String publication;
 
     public Borrower() {}
 

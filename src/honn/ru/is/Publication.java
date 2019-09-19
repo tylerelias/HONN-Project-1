@@ -1,11 +1,11 @@
-package honn.ru.is.referencemanager;
+package honn.ru.is;
 
 public class Publication {
-    String editorName;
-    String title;
-    String journal;
-    int year;
-    boolean type; // 1 = printed, 0 = electronic
+    private String editorName;
+    private String title;
+    private String journal;
+    private int year;
+    private boolean type; // 1 = printed, 0 = electronic
 
     public Publication() {}
 

@@ -1,4 +1,4 @@
-package honn.ru.is.referencemanager;
+package honn.ru.is;
 
 /*
        Borrower.java
@@ -6,11 +6,11 @@ package honn.ru.is.referencemanager;
  */
 
 public class Person {
-    public String firstName;
-    public String lastName;
-    public String email;
-    public String phoneNumber;
-    public String address;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phoneNumber;
+    private String address;
 
     // empty constr
     Person() {}

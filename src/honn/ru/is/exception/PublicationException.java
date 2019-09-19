@@ -1,4 +1,4 @@
-package honn.ru.is.referencemanager.exception;
+package honn.ru.is.exception;
 
 public class PublicationException extends RuntimeException {
     public PublicationException(String message) {
