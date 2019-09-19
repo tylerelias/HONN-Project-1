@@ -17,11 +17,12 @@ public class ReadPublications {
         object = new JSONParser().parse(new FileReader(fileName));
     }
 
-    public JSONArray getJSONArray() {
+    public JSONArray getJSONArray() throws IOException, ParseException {
+        object = new JSONParser().parse(new FileReader(fileName));
         return (JSONArray) object;
     }
 
-    public JSONObject getJSONObjectByIndex(int index) {
+    public JSONObject getJSONObjectByIndex(int index) throws IOException, ParseException {
         return (JSONObject)getJSONArray().get(index);
     }
 

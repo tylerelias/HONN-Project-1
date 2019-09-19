@@ -1,5 +1,6 @@
 package honn.ru.is.test;
 
+import honn.ru.is.data.CreatePublication;
 import honn.ru.is.data.ReadPublications;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
@@ -13,12 +14,17 @@ public class PublicationTest {
 
         JSONArray publicationArray = readPublications.getJSONArray();
 
-        System.out.println(publicationArray.get(2));
 
         //This test should fail since year is less than 0
 //        if(publication1.getYear() < 0) {
 //            throw new PublicationException("Year must be a positive number");
 //        }
+
+        CreatePublication createPublication = new CreatePublication();
+        createPublication.AddPublication("FristName", "LastName", "The Title",
+                                         "12345-33", "electronic", 2019, "Very Int");
+        System.out.println("Current ID " + createPublication.getCurrentId());
+
 
     }
 }

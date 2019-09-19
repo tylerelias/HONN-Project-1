@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class CreatePerson {
 
-    private JSONArray jsonArray = new JSONArray();
+    private JSONArray jsonArray;
     private ReadPersons readPersons = new ReadPersons();
     private String fileName = "./src/json/t-302-honn_2019_Friends.json";
 
@@ -40,26 +40,9 @@ public class CreatePerson {
         file.write(jsonArray.toJSONString());
         file.flush();
         file.close();
-
-        //        JSONObject jsonObject = new JSONObject();
-//
-//        jsonObject.put("id", getCurrentId() + 1);
-//        jsonObject.put("first_name", firstName);
-//        jsonObject.put("last_name", lastName);
-//        jsonObject.put("email", email);
-//        jsonObject.put("phone", phoneNumber);
-//        jsonObject.put("address", address);
-//        System.out.println(jsonObject);
-//
-//
-//        try {
-//            Files.write(Paths.get(fileName), jsonObject.toString().getBytes(), StandardOpenOption.APPEND);
-//        } catch (IOException e) {
-//            //TODO: Add
-//        }
     }
 
-    public int getCurrentId() {
-        return jsonArray.size();
+    public int getCurrentId() throws IOException, ParseException {
+        return readPersons.getJSONArray().size();
     }
 }

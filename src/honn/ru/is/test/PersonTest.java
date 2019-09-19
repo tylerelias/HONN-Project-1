@@ -15,11 +15,9 @@ public class PersonTest {
 
         JSONArray personsArray = readPersons.getJSONArray();
 
-        System.out.println(personsArray.get(2));
 
         JSONObject jsonObject = readPersons.getJSONObjectByIndex(1);
 
-        System.out.println(jsonObject.get("address"));
 
         CreatePerson createPerson = new CreatePerson();
         System.out.println("Current ID " + createPerson.getCurrentId());
@@ -29,5 +27,7 @@ public class PersonTest {
         System.out.println(personsArray.toJSONString());
 
         System.out.println("Current ID " + createPerson.getCurrentId());
+        System.out.println(personsArray.get(2));
+        System.out.println(jsonObject.get("address"));
     }
 }
