@@ -1,7 +1,7 @@
 package honn.ru.is.test;
 
-import honn.ru.is.Person;
 import honn.ru.is.data.ReadPersons;
+import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -11,7 +11,8 @@ public class PersonTest {
 
         ReadPersons readPersons = new ReadPersons();
 
-        Person person1 = new Person("Tyler", "Jones", "Hi@you.cool", "222-3333", "Home 42");
-        System.out.print(person1.toString());
+        JSONArray personsArray = readPersons.getJSONArray();
+
+        System.out.println(personsArray.get(2));
     }
 }
