@@ -1,19 +1,24 @@
 package honn.ru.is.test;
 
-import honn.ru.is.Publication;
-import honn.ru.is.exception.PublicationException;
+import honn.ru.is.data.ReadPublications;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 public class PublicationTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
+
+        ReadPublications readPublications = new ReadPublications();
+
+        JSONArray publicationArray = readPublications.getJSONArray();
+
+        System.out.println(publicationArray.get(2));
 
         //This test should fail since year is less than 0
-        Publication publication1 = new Publication("John", "Title 42", "Some Journal", -1, true);
-        if(publication1.getYear() < 0) {
-            throw new PublicationException("Year must be a positive number");
-        }
-        Publication publication2 = new Publication("Smith John", "The Title of 42", "The Journal", 1998, true);
-
-        System.out.println(publication2.toString());
+//        if(publication1.getYear() < 0) {
+//            throw new PublicationException("Year must be a positive number");
+//        }
 
     }
 }
