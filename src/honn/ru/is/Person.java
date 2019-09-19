@@ -6,6 +6,7 @@ package honn.ru.is;
  */
 
 public class Person {
+    private int id;
     private String firstName;
     private String lastName;
     private String email;
@@ -15,7 +16,8 @@ public class Person {
     // empty constr
     Person() {}
 
-    public Person(String firstName, String lastName, String email, String phoneNumber, String address) {
+    public Person(int id, String firstName, String lastName, String email, String phoneNumber, String address) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -25,6 +27,9 @@ public class Person {
 
     // GETTERS
 
+    public int getId() {
+        return id;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -46,6 +51,10 @@ public class Person {
     }
 
     //SETTERS
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
