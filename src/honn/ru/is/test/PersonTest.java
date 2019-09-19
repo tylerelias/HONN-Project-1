@@ -22,9 +22,12 @@ public class PersonTest {
         System.out.println(jsonObject.get("address"));
 
         CreatePerson createPerson = new CreatePerson();
-        System.out.println("Current ID" + createPerson.getCurrentId());
+        System.out.println("Current ID " + createPerson.getCurrentId());
 
         createPerson.AddPerson("Hello", "World", "hello@world.com", "555 444 333", "Home 33");
 
+        System.out.println(personsArray.toJSONString());
+
+        System.out.println("Current ID " + createPerson.getCurrentId());
     }
 }
