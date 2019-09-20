@@ -1,4 +1,4 @@
-package honn.ru.is.data;
+package is.ru.honn.data;
 
 /*  ReadPerson.java
     Reads the t-302-honn_2019_Friends.json file that was

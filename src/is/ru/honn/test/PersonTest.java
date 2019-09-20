@@ -1,7 +1,7 @@
-package honn.ru.is.test;
+package is.ru.honn.test;
 
-import honn.ru.is.data.CreatePerson;
-import honn.ru.is.data.ReadPersons;
+import is.ru.honn.data.CreatePerson;
+import is.ru.honn.data.ReadPersons;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;

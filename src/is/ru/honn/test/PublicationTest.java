@@ -1,7 +1,7 @@
-package honn.ru.is.test;
+package is.ru.honn.test;
 
-import honn.ru.is.data.CreatePublication;
-import honn.ru.is.data.ReadPublications;
+import is.ru.honn.data.CreatePublication;
+import is.ru.honn.data.ReadPublications;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 

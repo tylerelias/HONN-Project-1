@@ -1,4 +1,4 @@
-package honn.ru.is.data;
+package is.ru.honn.data;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

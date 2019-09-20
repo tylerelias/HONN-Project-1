@@ -1,4 +1,4 @@
-package honn.ru.is;
+package is.ru.honn;
 
 // For a particular date, output a ​list of publications​ that are on loan,
 // and who borrowed them

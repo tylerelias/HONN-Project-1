@@ -1,4 +1,4 @@
-package honn.ru.is.exception;
+package is.ru.honn.exception;
 
 public class PublicationException extends RuntimeException {
     public PublicationException(String message) {

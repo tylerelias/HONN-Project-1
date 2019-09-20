@@ -1,4 +1,4 @@
-package honn.ru.is;
+package is.ru.honn;
 
 /*
        Borrower.java
