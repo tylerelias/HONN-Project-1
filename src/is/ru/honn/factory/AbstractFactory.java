@@ -1,6 +1,6 @@
 package is.ru.honn.factory;
 
-import is.ru.honn.exception.FactoryException;
+import is.ru.honn.factory.exception.FactoryException;
 
 import java.io.File;
 import java.io.FileInputStream;

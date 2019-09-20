@@ -2,12 +2,24 @@
 
 The class structure is as follows:
 
-## Person : Stores information needed for the Person
+## Person.java : Stores information needed for the Person data
 
-### PersonFactory : Loads all properties needed for the Person classes
+### PersonFactory.java : Loads all properties needed for the Person classes
 
-### CreatePerson : Creates a new JSON object of a person and saves it to the JSON file
+### CreatePerson.java: Creates a new JSON object of a person and saves it to the JSON file
 
-### PersonService : Gets custom settings needed for Person classes
+### PersonService.java : Gets custom settings needed for Person classes
 
-### PersonTest : Testing the People Class
+### ReadPerson.java : Reads the .json file of People and returns it
+
+### PersonTest.java : Testing the People Class
+
+## Publication.java : Stores information needed for Publication data
+
+### ListPublicatios : Filter and list Publications that meet the selected date criteria
+
+### ReadPublication 
+
+### PublicationException
+
+## AbstractFactory
