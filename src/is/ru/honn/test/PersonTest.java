@@ -1,5 +1,6 @@
 package is.ru.honn.test;
 
+import is.ru.honn.Person;
 import is.ru.honn.data.CreatePerson;
 import is.ru.honn.data.ReadPersons;
 import org.json.simple.JSONArray;
@@ -22,7 +23,9 @@ public class PersonTest {
         CreatePerson createPerson = new CreatePerson();
         System.out.println("Current ID " + createPerson.getCurrentId());
 
-        createPerson.AddPerson("Hello", "World", "hello@world.com", "555 444 333", "Home 33");
+        Person person = new Person("Hello", "World", "hello@world.com", "555 444 333", "Home 33");
+
+        createPerson.AddPerson(person);
 
         System.out.println(personsArray.toJSONString());
 

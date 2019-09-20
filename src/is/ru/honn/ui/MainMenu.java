@@ -9,16 +9,6 @@ public class MainMenu {
     public MainMenu() {
     }
 
-//    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        System.out.print("Enter String");
-//    String s = br.readLine();
-//        System.out.print("Enter Integer:");
-//        try {
-//        int i = Integer.parseInt(br.readLine());
-//    } catch(NumberFormatException nfe) {
-//        System.err.println("Invalid Format!");
-//    }
-
     public void DisplayMenu() throws IOException {
 
         HomeLayout();
@@ -31,7 +21,6 @@ public class MainMenu {
         } catch(NumberFormatException nfe) {
             System.err.println("Please inter a number");
         }
-
 
         switch (input) {
             case 1: DisplayPeopleRegistryMenu();

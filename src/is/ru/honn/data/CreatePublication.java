@@ -1,5 +1,12 @@
 package is.ru.honn.data;
 
+/*
+    AbstractFactory.java
+
+    Gets a definition file
+    as well as loading a plugin class
+ */
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
