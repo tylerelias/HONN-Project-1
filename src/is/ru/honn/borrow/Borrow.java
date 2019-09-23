@@ -2,7 +2,7 @@ package is.ru.honn.borrow;
 
 /*
     Borrower.java
-    Registers when a person borrows a publication
+    Registers when a person borrows a publicationID
     We will treat the person's email as its identifier
  */
 
@@ -10,42 +10,42 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Borrow {
-    private String borrowerEmail;
+    private int personID;
     private Date borrowDate;
     private Date returnDate;
-    private String publication;
+    private int publicationID;
 
     public Borrow() {}
 
-    public Borrow(String borrowerEmail, Date borrowDate, Date returnDate, String publication) {
-        this.borrowerEmail = borrowerEmail;
+    public Borrow(int personID, Date borrowDate, Date returnDate, int publicationID) {
+        this.personID = personID;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
-        this.publication = publication;
+        this.publicationID = publicationID;
     }
 
     //GETTERS
 
-    public String getBorrowerEmail() {
-        return borrowerEmail;
+    public int getPersonID() {
+        return personID;
     }
 
-    public Date getBorrowDate() {
-        return borrowDate;
+    public String getBorrowDate() {
+        return formatDate(borrowDate);
     }
 
-    public Date getReturnDate() {
-        return returnDate;
+    public String getReturnDate() {
+        return formatDate(returnDate);
     }
 
-    public String getPublication() {
-        return publication;
+    public int getpublicationID() {
+        return publicationID;
     }
 
     // SETTERS
 
-    public void setBorrowerEmail(String borrowerEmail) {
-        this.borrowerEmail = borrowerEmail;
+    public void setBorrowerEmail(int personID) {
+        this.personID = personID;
     }
 
     public void setBorrowDate(Date borrowDate) {
@@ -56,8 +56,8 @@ public class Borrow {
         this.returnDate = returnDate;
     }
 
-    public void setPublication(String publication) {
-        this.publication = publication;
+    public void setPublicationID(int publicationID) {
+        this.publicationID = publicationID;
     }
 
     private String formatDate(Date date) {
@@ -67,9 +67,9 @@ public class Borrow {
 
     @Override
     public String toString() {
-        return "Borrower ID: " + this.borrowerEmail + "\n" +
+        return "Borrower ID: " + this.personID + "\n" +
                 "Borrow Date: " + formatDate(this.borrowDate) + "\n" +
                 "Return Date: " + formatDate(this.returnDate) + "\n" +
-                "Publication: " + this.publication + "\n";
+                "publicationID: " + this.publicationID + "\n";
     }
 }

@@ -8,4 +8,7 @@ import java.util.GregorianCalendar;
 public class ListPublication {
     GregorianCalendar lookupDate;
 
+    // 1. insert lookup date
+    // 2. get a list of publivcations that are out on loan
+
 }

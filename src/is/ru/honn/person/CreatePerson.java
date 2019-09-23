@@ -1,7 +1,5 @@
 package is.ru.honn.person;
 
-import is.ru.honn.person.factory.PersonFactory;
-import is.ru.honn.person.service.PersonService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,12 +12,11 @@ import java.io.IOException;
 public class CreatePerson extends AbstractCreatePerson {
 
     private ReadPerson readPerson = new ReadPerson();
-//    private String fileName = "./src/json/t-302-honn_2019_Friends.json";
 
     public CreatePerson() throws IOException, ParseException { }
 
     public void AddPerson(Person person) throws IOException, ParseException {
-        PersonService personService = new PersonFactory().getPersonService();
+        //PersonService personService = new PersonFactory().getPersonService();
         JSONParser jsonParser = new JSONParser();
 
         Object object = jsonParser.parse(new FileReader(getFilePath()));
