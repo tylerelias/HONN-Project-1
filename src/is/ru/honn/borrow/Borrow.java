@@ -14,35 +14,51 @@ public class Borrow {
     private Date borrowDate;
     private Date returnDate;
     private int publicationID;
+    private String personName;
+    private String publicationName;
 
     public Borrow() {}
 
-    public Borrow(int personID, Date borrowDate, Date returnDate, int publicationID) {
+    public Borrow(int personID, String personName, Date borrowDate, Date returnDate, int publicationID, String publicationName) {
         this.personID = personID;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
         this.publicationID = publicationID;
+        this.personName = personName;
+        this.publicationName = publicationName;
     }
 
     //GETTERS
 
-    public int getPersonID() {
+    String getPublicationName() {
+        return publicationName;
+    }
+
+    int getPersonID() {
         return personID;
     }
 
-    public String getBorrowDate() {
+    String getBorrowDate() {
         return formatDate(borrowDate);
     }
 
-    public String getReturnDate() {
+    String getReturnDate() {
         return formatDate(returnDate);
     }
 
-    public int getpublicationID() {
+    int getPublicationID() {
         return publicationID;
     }
 
+    String getPersonName() {
+        return personName;
+    }
+
     // SETTERS
+
+    public void setPublicationName(String publicationName) {
+        this.publicationName = publicationName;
+    }
 
     public void setBorrowerEmail(int personID) {
         this.personID = personID;
@@ -60,8 +76,16 @@ public class Borrow {
         this.publicationID = publicationID;
     }
 
+    public void setPersonID(int personID) {
+        this.personID = personID;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+
     private String formatDate(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.YYYY");
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-YYYY");
         return format.format(date);
     }
 

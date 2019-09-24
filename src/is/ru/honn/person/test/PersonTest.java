@@ -21,7 +21,7 @@ public class PersonTest {
 
 
         CreatePerson createPerson = new CreatePerson();
-        System.out.println("Current ID " + createPerson.getCurrentId());
+        System.out.println("Current ID " + createPerson.GetCurrentId());
 
         Person person = new Person("Hello", "World", "hello@world.com", "555 444 333", "Home 33");
 
@@ -29,7 +29,7 @@ public class PersonTest {
 
         System.out.println(personsArray.toJSONString());
 
-        System.out.println("Current ID " + createPerson.getCurrentId());
+        System.out.println("Current ID " + createPerson.GetCurrentId());
         System.out.println(personsArray.get(2));
         System.out.println(jsonObject.get("address"));
     }

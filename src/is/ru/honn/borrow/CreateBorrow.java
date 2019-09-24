@@ -26,10 +26,12 @@ public class CreateBorrow extends AbstractCreateBorrowService {
 
         JSONObject addBorrow = new JSONObject();
         addBorrow.put("id", getCurrentId() + 1);
+        addBorrow.put("person_name", borrow.getPersonName());
         addBorrow.put("person_id", borrow.getPersonID());
         addBorrow.put("borrow_date", borrow.getBorrowDate());
         addBorrow.put("return_date", borrow.getReturnDate());
-        addBorrow.put("publication", borrow.getpublicationID());
+        addBorrow.put("publication_id", borrow.getPublicationID());
+        addBorrow.put("publication_name", borrow.getPublicationName());
 
         jsonArray.add(addBorrow);
 
