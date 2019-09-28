@@ -17,14 +17,15 @@ public class ReadPublication {
         object = new JSONParser().parse(new FileReader(fileName));
     }
 
+    // Return an array of the JSON data
     public JSONArray getJSONArray() throws IOException, ParseException {
         object = new JSONParser().parse(new FileReader(fileName));
         return (JSONArray) object;
     }
 
+    // This takes an index of a certain JSON row and returns it, enables lookup by key values
+    // something that was not (at least I couldn't do) with getJSONArray alone
     public JSONObject getJSONObjectByIndex(int index) throws IOException, ParseException {
         return (JSONObject)getJSONArray().get(index);
     }
-
-
 }

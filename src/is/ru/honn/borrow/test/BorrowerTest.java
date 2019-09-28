@@ -4,7 +4,6 @@ import is.ru.honn.borrow.Borrow;
 import is.ru.honn.borrow.ReadBorrow;
 import is.ru.honn.borrow.factory.BorrowFactory;
 import is.ru.honn.borrow.service.CreateBorrowService;
-import is.ru.honn.publication.ListPublication;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 
@@ -32,7 +31,6 @@ public class BorrowerTest {
         GregorianCalendar borrowDate8 = new GregorianCalendar(2018, Calendar.JUNE, 24);
         GregorianCalendar returnDate8 = new GregorianCalendar(2019, Calendar.DECEMBER, 30);
 
-        GregorianCalendar testing = new GregorianCalendar(2019, Calendar.DECEMBER, 30);
 
         Borrow borrow1 = new Borrow(1, "Bubbi", borrowDate1.getTime(), returnDate1.getTime(), 2, "placeholder");
         Borrow borrow2 = new Borrow(2, "Daddi", borrowDate2.getTime(), returnDate2.getTime(), 3, "notaplaceholder");
@@ -56,15 +54,6 @@ public class BorrowerTest {
 
         ReadBorrow readBorrow = new ReadBorrow();
         JSONArray borrowArray = readBorrow.getJSONArray();
-        System.out.println(borrowArray);
-
-        ListPublication listPublication = new ListPublication();
-        JSONArray a = listPublication.findPublicationsByDate(testing.getTime());
-        System.out.println(listPublication.toStringBuilder());
-//        for(int i = 0; i < a.size(); i++) {
-//            System.out.println(a.get(i));
-//        }
-
-
+//        System.out.println(borrowArray);
     }
 }

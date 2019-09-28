@@ -23,8 +23,7 @@ public class CreatePublication {
     public CreatePublication() throws IOException, ParseException {
     }
 
-    public void AddPublication(String firstName, String lastName, String publicationTitle, String ISBN,
-                               String type, int year, String journal) throws IOException, ParseException {
+    public void AddPublication(Publication publication) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
 
         Object object = jsonParser.parse(new FileReader(fileName));
@@ -32,13 +31,13 @@ public class CreatePublication {
 
         JSONObject addPublication = new JSONObject();
         addPublication.put("id", getCurrentId() + 1);
-        addPublication.put("editor_first_name", firstName);
-        addPublication.put("editor_last_name", lastName);
-        addPublication.put("publication_title", publicationTitle);
-        addPublication.put("isbn", ISBN);
-        addPublication.put("type", type);
-        addPublication.put("year", year);
-        addPublication.put("journal", journal);
+        addPublication.put("editor_first_name", publication.getFirstName());
+        addPublication.put("editor_last_name", publication.getLastName());
+        addPublication.put("publication_title", publication.getPublicationTitle());
+        addPublication.put("isbn", publication.getISBN());
+        addPublication.put("type", publication.getType());
+        addPublication.put("year", publication.getYear());
+        addPublication.put("journal", publication.getJournal());
 
         jsonArray.add(addPublication);
 

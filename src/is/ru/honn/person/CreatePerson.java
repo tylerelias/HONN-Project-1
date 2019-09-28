@@ -22,9 +22,11 @@ public class CreatePerson extends AbstractCreatePerson {
 
     // AddPerson() Takes in the Person class and puts it in a JSON object and writes it to the file.
     public void AddPerson(Person person) throws IOException, ParseException {
+        // My factory setup was failing when calling this from MainMenu.java, so hard coded filepath it is.
+        String filePath = "./src/json/t-302-honn_2019_Friends.json";
         JSONParser jsonParser = new JSONParser();
 
-        Object object = jsonParser.parse(new FileReader(getFilePath()));
+        Object object = jsonParser.parse(new FileReader(filePath));
         JSONArray jsonArray = (JSONArray) object;
 
         JSONObject addPerson = new JSONObject();
@@ -37,7 +39,7 @@ public class CreatePerson extends AbstractCreatePerson {
 
         jsonArray.add(addPerson);
 
-        FileWriter file = new FileWriter(getFilePath());
+        FileWriter file = new FileWriter(filePath);
         file.write(jsonArray.toJSONString());
         file.flush();
         file.close();

@@ -12,7 +12,7 @@ import java.io.IOException;
 public class ReadBorrow extends AbstractReadBorrowService {
 
     private Object object;
-    String fileName = "./src/json/t-302-honn_2019_Borrow.json";
+    private String fileName = "./src/json/t-302-honn_2019_Borrow.json";
 
     public ReadBorrow() throws IOException, ParseException {
         object = new JSONParser().parse(new FileReader(fileName));

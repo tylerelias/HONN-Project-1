@@ -1,29 +1,43 @@
 package is.ru.honn.publication;
 
 public class Publication {
-    private String editorName;
-    private String title;
+    private String firstName;
+    private String lastName;
+    private String publicationTitle;
     private String journal;
+    private String ISBN;
     private int year;
-    private boolean type; // 1 = printed, 0 = electronic
+    private String type; // 1 = printed, 0 = electronic
 
-    public Publication() {}
+    public Publication() {
+    }
 
-    public Publication(String editorName, String title, String journal, int year, boolean type) {
-        this.editorName = editorName;
-        this.title = title;
+    public Publication(String firstName, String lastName, String publicationTitle, String ISBN, String journal, int year, String type) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.publicationTitle = publicationTitle;
+        this.ISBN = ISBN;
         this.journal = journal;
         this.year = year;
         this.type = type;
     }
 
     //GETTERS
-    public String getEditorName() {
-        return editorName;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getTitle() {
-        return title;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public String getPublicationTitle() {
+        return publicationTitle;
     }
 
     public String getJournal() {
@@ -34,14 +48,26 @@ public class Publication {
         return year;
     }
 
-    //SETTERS
-
-    public void setEditorName(String editorName) {
-        this.editorName = editorName;
+    public String getType() {
+        return type;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    //SETTERS
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setPublicationTitle(String publicationTitle) {
+        this.publicationTitle = publicationTitle;
     }
 
     public void setJournal(String journal) {
@@ -52,22 +78,17 @@ public class Publication {
         this.year = year;
     }
 
-    // Since the type is stored as a boolean we need to convert
-    // it to a user friendly readable format
-    private String getTypeName(boolean type) {
-        if(type) {
-            return "Printed";
-        } else {
-            return "Electronic";
-        }
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
     public String toString() {
-        return "Editor: "  + this.editorName + "\n" +
-                "Title: " + this.title + "\n" +
+        return "Editor: " + this.firstName + " " + this.lastName + "\n" +
+                "Title: " + this.publicationTitle + "\n" +
+                "ISBN: " + this.ISBN + "\n" +
                 "Journal: " + this.journal + "\n" +
                 "Year: " + this.year + "\n" +
-                "Type: " + getTypeName(this.type) + "\n";
+                "Type: " + this.type + "\n";
     }
 }

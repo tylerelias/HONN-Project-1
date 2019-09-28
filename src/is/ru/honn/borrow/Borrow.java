@@ -30,27 +30,27 @@ public class Borrow {
 
     //GETTERS
 
-    String getPublicationName() {
+    public String getPublicationName() {
         return publicationName;
     }
 
-    int getPersonID() {
+    public int getPersonID() {
         return personID;
     }
 
-    String getBorrowDate() {
+    public String getBorrowDate() {
         return formatDate(borrowDate);
     }
 
-    String getReturnDate() {
+    public String getReturnDate() {
         return formatDate(returnDate);
     }
 
-    int getPublicationID() {
+    public int getPublicationID() {
         return publicationID;
     }
 
-    String getPersonName() {
+    public String getPersonName() {
         return personName;
     }
 
@@ -84,7 +84,7 @@ public class Borrow {
         this.personName = personName;
     }
 
-    private String formatDate(Date date) {
+    public String formatDate(Date date) {
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-YYYY");
         return format.format(date);
     }

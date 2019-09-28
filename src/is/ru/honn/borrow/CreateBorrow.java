@@ -1,6 +1,9 @@
 package is.ru.honn.borrow;
 
+import is.ru.honn.borrow.exception.BorrowServiceException;
 import is.ru.honn.borrow.service.AbstractCreateBorrowService;
+import is.ru.honn.person.CreatePerson;
+import is.ru.honn.publication.CreatePublication;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -19,9 +22,12 @@ public class CreateBorrow extends AbstractCreateBorrowService {
 
     public void createBorrow(Borrow borrow) throws IOException, ParseException {
 
+        if(IsValidPersonId(borrow.getPersonID()) && IsValidPublicationId(borrow.getPublicationID())) {
+
+        String filePath = "./src/json/t-302-honn_2019_Borrow.json";
         JSONParser jsonParser = new JSONParser();
 
-        Object object = jsonParser.parse(new FileReader(getFilePath()));
+        Object object = jsonParser.parse(new FileReader(filePath));
         JSONArray jsonArray = (JSONArray) object;
 
         JSONObject addBorrow = new JSONObject();
@@ -35,13 +41,27 @@ public class CreateBorrow extends AbstractCreateBorrowService {
 
         jsonArray.add(addBorrow);
 
-        FileWriter file = new FileWriter(getFilePath());
+        FileWriter file = new FileWriter(filePath);
         file.write(jsonArray.toJSONString());
         file.flush();
         file.close();
+        }
+        else {
+            throw new BorrowServiceException("Please make sure the IDs are valid");
+        }
     }
 
-    public int getCurrentId() throws IOException, ParseException {
+    private boolean IsValidPublicationId(int id) throws IOException, ParseException {
+        CreatePublication createPublication = new CreatePublication();
+        return id <= createPublication.getCurrentId();
+    }
+
+    private boolean IsValidPersonId(int id) throws IOException, ParseException {
+        CreatePerson createPerson = new CreatePerson();
+        return id <= createPerson.GetCurrentId();
+    }
+
+    private int getCurrentId() throws IOException, ParseException {
         return readBorrow.getJSONArray().size();
     }
 }

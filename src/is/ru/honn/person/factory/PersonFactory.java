@@ -5,6 +5,8 @@ import is.ru.honn.factory.AbstractFactory;
 import is.ru.honn.person.exception.PersonServiceException;
 import is.ru.honn.person.service.PersonService;
 
+// Not functioning at the moment, okay since it's a prototype
+
 public class PersonFactory extends AbstractFactory {
     public PersonService getPersonService() {
         PersonService personService = null;
