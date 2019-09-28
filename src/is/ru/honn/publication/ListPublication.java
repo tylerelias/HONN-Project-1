@@ -166,8 +166,29 @@ public class ListPublication {
                     .append(jsonObject.get("borrow_date"))
                     .append("\nReturn Date: ")
                     .append(jsonObject.get("return_date"))
-                    .append("\n\n\n");
+                    .append("\n\n");
 
+        }
+        return text;
+    }
+
+    public StringBuilder PersonToStringBuilder() {
+
+        StringBuilder text = new StringBuilder();
+        JSONObject jsonObject;
+
+        for (int i = 0; i < matchesArray.size(); i++) {
+            jsonObject = (JSONObject)matchesArray.get(i);
+            text
+                    .append("Publication: ")
+                    .append(jsonObject.get("publication_name"))
+                    .append("\nBorrower Name: ")
+                    .append(jsonObject.get("person_name"))
+                    .append("\nBorrow Date: ")
+                    .append(jsonObject.get("borrow_date"))
+                    .append("\nReturn Date: ")
+                    .append(jsonObject.get("return_date"))
+                    .append("\n\n");
         }
         return text;
     }

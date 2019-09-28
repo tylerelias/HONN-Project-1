@@ -9,6 +9,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.util.Date;
 
+//TODO: Look into the naming of this class, it's not as descriptive as it could be considering its functionality
 public class ListPerson {
     private static final int MORE_THAN_ONE_MONTH = 3; // In the code, 3 would not be descriptive of its functionality
     private static final int DECEMBER = 12;
@@ -103,7 +104,6 @@ public class ListPerson {
                     .append("\nReturn Date: ")
                     .append(jsonObject.get("return_date"))
                     .append("\n\n\n");
-
         }
         return text;
     }

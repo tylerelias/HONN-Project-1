@@ -22,29 +22,33 @@ public class MainMenu {
 
     public void DisplayMenu() throws IOException, ParseException {
 
-        HomeLayout();
+        while(true) {
+            HomeLayout();
 
-        int input = ReadInputInteger();
+            int input = ReadInputInteger();
 
-        switch (input) {
-            case 1:
-                DisplayPeopleRegistryMenu();
-                break;
-            case 2:
-                DisplayPublicationRegistryMenu();
-                break;
-            case 3:
-                DisplayBorrowingMenu();
-                break;
-            case 4:
-                DisplayListOfPublicationByDateMenu();
-                break;
-            case 5:
-                DisplayListOfBorrowersByDateMenu();
-                break;
-            case 6:
-                DisplayListOfPeopleBorrowingForMoreThanMonth();
-                break;
+            switch (input) {
+                case 1:
+                    DisplayPeopleRegistryMenu();
+                    break;
+                case 2:
+                    DisplayPublicationRegistryMenu();
+                    break;
+                case 3:
+                    DisplayBorrowingMenu();
+                    break;
+                case 4:
+                    DisplayListOfPublicationByDateMenu();
+                    break;
+                case 5:
+                    DisplayListOfBorrowersByDateMenu();
+                    break;
+                case 6:
+                    DisplayListOfPeopleBorrowingForMoreThanMonth();
+                    break;
+                case 0:
+                    System.exit(1);
+            }
         }
     }
 
@@ -60,6 +64,7 @@ public class MainMenu {
         System.out.println("\t4: List publications that are out on loan by date");
         System.out.println("\t5: List who is borrowing a publication by date");
         System.out.println("\t6: List people who have borrowed a publication for more than a month");
+        System.out.println("\t0: Exit Program");
     }
 
     private void DisplayPeopleRegistryMenu() throws IOException, ParseException {
@@ -86,12 +91,15 @@ public class MainMenu {
         createPerson.AddPerson(person);
 
         //TODO: Throw into a function
-        System.out.println("The Person has been created! Welcome to the system:");
+        System.out.println("\n\nThe Person has been created! Welcome to the system:\n");
         System.out.println("First Name: " + person.getFirstName());
         System.out.println("Last Name: " + person.getLastName());
         System.out.println("Email: " + person.getEmail());
         System.out.println("Phone Number: " + person.getPhoneNumber());
         System.out.println("Address: " + person.getAddress());
+
+        System.out.println("\nPress any key to continue...");
+        System.in.read();
     }
 
     private void DisplayPublicationRegistryMenu() throws IOException, ParseException {
@@ -132,13 +140,16 @@ public class MainMenu {
         createPublication.AddPublication(publication);
 
         //TODO: Throw into a function
-        System.out.println("Publication has been created");
+        System.out.println("\n\nPublication has been created\n");
         System.out.println("First Name: " + publication.getFirstName());
         System.out.println("Last Name: " + publication.getLastName());
         System.out.println("Publication Title: " + publication.getPublicationTitle());
         System.out.println("ISBN: " + publication.getISBN());
         System.out.println("Journal: " + publication.getJournal());
         System.out.println("Type: " + publication.getType());
+
+        System.out.println("\nPress any key to continue...");
+        System.in.read();
     }
 
     private void DisplayBorrowingMenu() throws IOException, ParseException {
@@ -178,7 +189,7 @@ public class MainMenu {
         createBorrow.createBorrow(borrow);
 
         //TODO: Throw into a function
-        System.out.println("Borrowing has been created:");
+        System.out.println("\n\nBorrowing has been created:\n");
         System.out.println("Person's ID: " + borrow.getPersonID());
         System.out.println("Person's Name: " + borrow.getPersonName());
         System.out.println("Borrow Date: " + borrow.getBorrowDate());
@@ -186,7 +197,8 @@ public class MainMenu {
         System.out.println("Publication ID: " + borrow.getPublicationID());
         System.out.println("Publication Name: " + borrow.getPersonName());
 
-
+        System.out.println("\nPress any key to continue...");
+        System.in.read();
     }
 
     private void DisplayListOfPublicationByDateMenu() throws IOException, ParseException {
@@ -201,6 +213,9 @@ public class MainMenu {
 
         System.out.println("\nThe following matches came up:\n");
         System.out.println(listPublication.PublicationToStringBuilder());
+
+        System.out.println("Press any key to continue...");
+        System.in.read();
     }
 
     private void DisplayListOfBorrowersByDateMenu() throws IOException, ParseException {
@@ -210,19 +225,30 @@ public class MainMenu {
         System.out.println("\t\t========================================================");
         System.out.println("Enter the date to look up:");
 
-        ListPerson listPerson = new ListPerson();
-        listPerson.getMoreThanMonthBorrowers(ReadInputDate().getTime());
+        ListPublication listPublication = new ListPublication();
+        listPublication.findPublicationsByDate(ReadInputDate().getTime());
 
         System.out.println("\nThe following matches came up:\n");
-        System.out.println(listPerson.PersonToStringBuilder());
+        System.out.println(listPublication.PersonToStringBuilder());
+
+        System.out.println("Press any key to continue...");
+        System.in.read();
     }
 
-    private void DisplayListOfPeopleBorrowingForMoreThanMonth() {
+    private void DisplayListOfPeopleBorrowingForMoreThanMonth() throws IOException, ParseException {
         System.out.println("\t\t========================================================");
         System.out.println("\t\t List Persons that have borrowed for more than a month");
         System.out.println("\t\t========================================================");
         System.out.println("Enter the date to look up:");
 
+        ListPerson listPerson = new ListPerson();
+        listPerson.getMoreThanMonthBorrowers(ReadInputDate().getTime());
+
+        System.out.println("\nThe following matches came up:\n");
+        System.out.println(listPerson.PersonToStringBuilder());
+
+        System.out.println("Press any key to continue...");
+        System.in.read();
     }
 
     private String ReadInputString() throws IOException {
