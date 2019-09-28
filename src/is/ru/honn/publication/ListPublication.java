@@ -177,8 +177,8 @@ public class ListPublication {
         StringBuilder text = new StringBuilder();
         JSONObject jsonObject;
 
-        for (int i = 0; i < matchesArray.size(); i++) {
-            jsonObject = (JSONObject)matchesArray.get(i);
+        for (Object o : matchesArray) {
+            jsonObject = (JSONObject) o;
             text
                     .append("Publication: ")
                     .append(jsonObject.get("publication_name"))
