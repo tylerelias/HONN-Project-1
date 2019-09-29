@@ -1,5 +1,20 @@
 # Project 1
 
+## Setup and Installation
+
+### The Java Code
+
+Since this is a prototype of the software, you are required to run the .java files manually. Trying to compile the .java
+in a terminal will give compile errors due to a .jar file being used. The IDE that was required
+for the course, IntelliJ is the one that should be run with the program. The .java file to execute to start the CLI
+is `main.java` located in `./src/main.java`
+
+### The YAML File for swagger.io
+
+The YAML file is located in `./YAML/API.yaml`
+
+To see the full GUI of the configuration, it is recommended to load it into https://editor.swagger.io
+
 ## Structure and Setup
 
 The general structure of the program is that each item that can be place in its own category, has its own class. 
@@ -12,7 +27,65 @@ ReadPerson, CreatePerson class and so on.
 This keeps the code clean makes it easier to go into the code later to change or fix things. It also makes it easier to add
 features and functionality to the program later down the road.
 
-The class structure is as follows:
+### Diagrams and Schema
+
+The diagrams and database schema are located in the `./Diagrams/` folder. The names of the diagrams are the file names for the images.
+
+#### Context Diagram
+
+The Context Diagram shows the three different users that will be accounted for in the software.
+
+- Authenticated User
+    - They will have the ability to borrow publications from the software and add ratings to publications that they have read
+    - They will be able to edit their profile information, such as name, email and address
+    - They will be able to edit or delete reviews that they have created
+- Administrator
+    - They will have CRUD powers for user accounts, publications and borrow records
+- Anonymous User
+    - They can view academic collections
+
+![](./Diagrams/Context Diagram.png)
+
+#### Container Diagram
+
+The Container diagram gives us a better idea on how the users access the software and how the data is being passed around.
+There will be a web server that listens for incoming requests, these requests can be from a personal computer, smartphone, tablet, etc.
+These requests are handled by the YAML configuration that was created and depending on the request, the web server will 
+either read/write to a JSON format or to a SQL server. The latter will also be storing information from the Google
+authentication API that will make user registration a much smother process.
+
+![](./Diagrams/Container Diagram.png)
+
+#### Component Diagram
+
+This diagram gives a better understanding on the layers that will be communicating with each other. Please not that a detailed
+explanation for the Java classes is further down in the README. The Java classes take care of all data manipulation for the SQL DB
+and most of the JSON formatting, although the server might pass some JSON data as well, but not as much. 
+The web server will also be using the Firebase Authentication API from Google for the user authentication.
+
+![](./Diagrams/Component Diagram.png)
+
+#### Database Schema
+
+The database schema consists only of tables that are used in the Java classes. The Firebase API might add some other
+tables the the schema if it would be fully implemented to the system. Since a Person can only borrow a specific publication once
+that means we dont need a middle table for Person and Publication. Otherwise and perhaps later down the road, we want a person
+to be able to borrow the same publication many times. 
+
+![](./Diagrams/Schema.png)
+
+#### Top Articles Class Diagram
+
+The implementation to `TopArticles` is pretty straight forward is would not be that difficult to add to the Java codebase.
+We would have to add a new variable for Publications called averageRating which would update by itself whenever a new rating
+is given to a Publication. Then we would get an array of the Top Rated Publications. But we must remember, we are only suppose
+to recommend books that a user has *not* read. That is where the `filterForUser()` function comes in. That function will
+get an array of all the publications that the user has read, compare them to the Top Rated Publications and remove any 
+publications from that list that the user has already read.
+
+![](./Diagrams/TopArticles.png)
+
+## Class Structure
 
 ## Person [Folder]
 
