@@ -1,5 +1,7 @@
 # Project 1
 
+## Structure and Setup
+
 The general structure of the program is that each item that can be place in its own category, has its own class. 
 Say if we have data stored for Persons, we make a class for Persons. If we store data for a Publication, we make a 
 Publication class and so on. This is done to make the different functions of the program, separate. Divide and conquer. 
@@ -43,7 +45,7 @@ will take place, having its basic structure will save time.
 
 - Creates a new JSON object of a person and saves it to the JSON file
 - Functions in the class:
-```
+```java
 public CreatePerson() 
 public void AddPerson(Person person) 
 public int GetCurrentId() 
