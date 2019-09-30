@@ -14,7 +14,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CreatePerson extends AbstractCreatePerson {
+public class CreatePerson {
     // We need to read the current highest ID from the JSON file
     private ReadPerson readPerson = new ReadPerson();
 

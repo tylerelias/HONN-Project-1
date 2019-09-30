@@ -7,7 +7,7 @@ public class Publication {
     private String journal;
     private String ISBN;
     private int year;
-    private String type; // 1 = printed, 0 = electronic
+    private String type;
 
     public Publication() {
     }

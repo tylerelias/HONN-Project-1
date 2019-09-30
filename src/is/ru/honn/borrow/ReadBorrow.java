@@ -1,6 +1,5 @@
 package is.ru.honn.borrow;
 
-import is.ru.honn.borrow.service.AbstractReadBorrowService;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,7 +8,7 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class ReadBorrow extends AbstractReadBorrowService {
+public class ReadBorrow {
 
     private Object object;
     private String fileName = "./src/json/t-302-honn_2019_Borrow.json";

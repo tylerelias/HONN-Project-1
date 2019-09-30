@@ -2,8 +2,6 @@ package is.ru.honn.borrow.test;
 
 import is.ru.honn.borrow.Borrow;
 import is.ru.honn.borrow.ReadBorrow;
-import is.ru.honn.borrow.factory.BorrowFactory;
-import is.ru.honn.borrow.service.CreateBorrowService;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 
@@ -41,8 +39,6 @@ public class BorrowerTest {
         Borrow borrow7 = new Borrow(7, "John Smith", borrowDate7.getTime(), returnDate7.getTime(), 8, "Some publication");
         Borrow borrow8 = new Borrow(8, "Sparri", borrowDate8.getTime(), returnDate8.getTime(), 9, "No Name");
 
-        BorrowFactory borrowFactory = new BorrowFactory();
-        CreateBorrowService createBorrowService = borrowFactory.getBorrowService();
 //        createBorrowService.createBorrow(borrow1);
 //        createBorrowService.createBorrow(borrow2);
 //        createBorrowService.createBorrow(borrow3);

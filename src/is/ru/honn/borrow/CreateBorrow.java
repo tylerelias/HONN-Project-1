@@ -1,7 +1,6 @@
 package is.ru.honn.borrow;
 
 import is.ru.honn.borrow.exception.BorrowServiceException;
-import is.ru.honn.borrow.service.AbstractCreateBorrowService;
 import is.ru.honn.person.CreatePerson;
 import is.ru.honn.publication.CreatePublication;
 import org.json.simple.JSONArray;
@@ -13,7 +12,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class CreateBorrow extends AbstractCreateBorrowService {
+public class CreateBorrow {
 
     private ReadBorrow readBorrow = new ReadBorrow();
 

@@ -24,6 +24,8 @@ All specific actions that are taken for each class are broken down to separate c
 specific object will be in its own class, as would a Read operation and so on. An example would be that Person has a 
 ReadPerson, CreatePerson class and so on. 
 
+Each layer is separated from one another for security, maintainability and expandability purposes.
+
 This keeps the code clean makes it easier to go into the code later to change or fix things. It also makes it easier to add
 features and functionality to the program later down the road.
 
@@ -62,6 +64,7 @@ This diagram gives a better understanding on the layers that will be communicati
 explanation for the Java classes is further down in the README. The Java classes take care of all data manipulation for the SQL DB
 and most of the JSON formatting, although the server might pass some JSON data as well, but not as much. 
 The web server will also be using the Firebase Authentication API from Google for the user authentication.
+The web server is using the YAML config to process requests coming in.
 
 ![](./Diagrams/ComponentDiagram.png)
 
