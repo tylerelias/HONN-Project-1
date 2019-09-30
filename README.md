@@ -106,17 +106,6 @@ public String toString()
 - This class is used to store data related to the user that is being processed in the system by the program. The usage 
 of this class is quite extensive in the program, since the data related to Person touches many parts of the program.
 
-
-### PersonFactory.java 
-
-- Loads all properties needed for the Person classes
-- Functions in the class:
-```java
-public class PersonFactory extends AbstractFactory
-```
-- Is not a functional class, but was added rather as an placeholder for when an expansion of the program
-will take place, having its basic structure will save time.
-
 ### CreatePerson.java
 
 - Creates a new JSON object of a person and saves it to the JSON file
@@ -131,16 +120,6 @@ I also somehow missed that part in the project description, although it is state
 But what this class does is to first read from the JSON file, place that content into an JSONArray. Then the filled out
 Person class is created as a JSON Object and added to the JSON Array. Then a file writer writes the new JSON Array and
 saves it locally on the machine.
-
-### PersonService.java
-
-- Gets custom settings needed for Person classes
-- This is not being used in the code, but rather a implementation to make it easier to implement
-factory classes in the future
-- Function in the class:
-```java
-public void setFilePath(String filePath)
-```
 
 ### ReadPerson.java
 
@@ -157,10 +136,6 @@ public JSONObject getJSONObjectByIndex(int index)
 
 - Testing the People Class
 - This was a class where all the tests for Person are, these test are not meant as pass/failed tests.
-
-### AbstractCreatePerson.java
-
-- A function made for a factory implementation
 
 ## Publication [Folder]
 
