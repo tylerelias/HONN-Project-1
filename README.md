@@ -4,7 +4,7 @@
 
 ### The Java Code
 
-Since this is a prototype of the software, you are required to run the .java files manually. Trying to compile the .java
+This is a prototype of the software, you are required to run the .java files manually. Trying to compile the .java
 in a terminal will give compile errors due to a .jar file being used. The IDE that was required
 for the course, IntelliJ is the one that should be run with the program.
 
@@ -49,16 +49,18 @@ The Context Diagram shows the three different users that will be accounted for i
 
 The Container diagram gives us a better idea on how the users access the software and how the data is being passed around.
 There will be a web server that listens for incoming requests, these requests can be from a personal computer, smartphone, tablet, etc.
-These requests are handled by the YAML configuration that was created and depending on the request, the web server will either read/write to a JSON format or to a SQL server. The latter will also be storing information from the Google
+The requests are handled by the YAML configuration that was created and depending on the request, the web server will either read/write to a JSON format or to a SQL server. The latter will also be storing information from the Google
 authentication API that will make user registration a much smother process.
 
 ![](./Diagrams/ContainerDiagram.png)
 
 #### Component Diagram
 
-This diagram gives a better understanding on the layers that will be communicating with each other. Please not that a detailed
-explanation for the Java classes is further down in the README. The Java classes take care of all data manipulation for the SQL DB
+This diagram gives a better understanding on the layers that will be communicating with each other. Note that a detailed
+explanation for the Java classes is further down in the README. The Java classes take care of all data manipulation for the MySQL DB
 and most of the JSON formatting, although the server might pass some JSON data as well, but not as much. 
+As things stand, then using Apache for the server to run it would seem like a viable option, although this decision is
+not final and is subject to changes if better options are discovered.
 The web server will also be using the Firebase Authentication API from Google for the user authentication.
 The web server is using the YAML config to process requests coming in.
 
@@ -69,14 +71,14 @@ The web server is using the YAML config to process requests coming in.
 The database schema consists only of tables that are used in the Java classes. The Firebase API might add some other
 tables the the schema if it would be fully implemented to the system. Since a Person can only borrow a specific publication once
 that means we dont need a middle table for Person and Publication. Otherwise and perhaps later down the road, we want a person
-to be able to borrow the same publication many times.
+to be able to borrow the same publication many times. There is also a `user_group` field for Person. This is to identify if the user is a regular user or an administrator.
 
 ![](./Diagrams/Schema.png)
 
 #### Top Articles Class Diagram
 
-The implementation to `TopArticles` is pretty straight forward is would not be that difficult to add to the Java codebase.
-We would have to add a new variable for Publications called averageRating which would update by itself whenever a new rating
+The implementation to `TopArticles` is pretty straight forward.
+We would have to add a new variable for `Publications` called `averageRating` which would update by itself whenever a new rating
 is given to a Publication. Then we would get an array of the Top Rated Publications. But we must remember, we are only suppose
 to recommend books that a user has *not* read. That is where the `filterForUser()` function comes in. That function will
 get an array of all the publications that the user has read, compare them to the Top Rated Publications and remove any 
@@ -131,13 +133,13 @@ public JSONObject getJSONObjectByIndex(int index)
 ### PersonTest.java
 
 - Testing the People Class
-- This was a class where all the tests for Person are, these test are not meant as pass/failed tests.
+- This class is where all the tests for Person are, these test are not meant as pass/failed tests but rather to check for functionality.
 
 ## Publication [Folder]
 
 ### Publication.java
 
-- Stores information needed for Publication data
+- Stores information needed for the Publication data
 - Functions in the class:
 ```java
 public Publication(String firstName, String lastName, String publicationTitle, String ISBN, String journal, int year, String type)
@@ -162,7 +164,7 @@ public StringBuilder PublicationToStringBuilder()
 public StringBuilder PersonToStringBuilder() 
 ```
 - This function has a lot going on for itself. It does more than just List Publications, it also filters and processes
-data coming into it. The latter should be moved to another class if there is refactoring to be done
+data coming into it. The latter should be moved to another class if there is refactoring to be done. But was left as is due to this being a prototype and time constraints.
 
 ### ReadPublication 
 
@@ -252,8 +254,14 @@ private int ReadInputInteger()
 private GregorianCalendar ReadInputDate()
 ```
 - This class has all the menus that the CLI uses. This should be broken down to smaller classes of refactoring
-takes place. And there is sometimes a lot of logic being done for a CLI class, should also be separated from this class.
+takes place. And there is sometimes a lot of logic being done for a CLI class, should also be separated from this class. It was not done due to this being a temporary solution as an interface for the prototype and is likely to be discarded from the code in the future.
 
 ## json [Folder]
 
 - Stores all JSON files for the program
+
+```java
+t-302-honn_2019_Borrow.json
+t-302-honn_2019_Friends.json
+t-302-honn_2019_Publications.json
+```
