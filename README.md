@@ -44,7 +44,7 @@ The Context Diagram shows the three different users that will be accounted for i
 - Anonymous User
     - They can view academic collections
 
-![](./Diagrams/Context Diagram.png)
+![](./Diagrams/ContextDiagram.png)
 
 #### Container Diagram
 
@@ -54,7 +54,7 @@ These requests are handled by the YAML configuration that was created and depend
 either read/write to a JSON format or to a SQL server. The latter will also be storing information from the Google
 authentication API that will make user registration a much smother process.
 
-![](./Diagrams/Container Diagram.png)
+![](./Diagrams/ContainerDiagram.png)
 
 #### Component Diagram
 
@@ -63,7 +63,7 @@ explanation for the Java classes is further down in the README. The Java classes
 and most of the JSON formatting, although the server might pass some JSON data as well, but not as much. 
 The web server will also be using the Firebase Authentication API from Google for the user authentication.
 
-![](./Diagrams/Component Diagram.png)
+![](./Diagrams/ComponentDiagram.png)
 
 #### Database Schema
 
