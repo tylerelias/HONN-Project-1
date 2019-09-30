@@ -6,8 +6,10 @@
 
 Since this is a prototype of the software, you are required to run the .java files manually. Trying to compile the .java
 in a terminal will give compile errors due to a .jar file being used. The IDE that was required
-for the course, IntelliJ is the one that should be run with the program. The .java file to execute to start the CLI
-is `main.java` located in `./src/main.java`
+for the course, IntelliJ is the one that should be run with the program.
+
+- Make sure to go to `Build` and click `Rebuild Project`, otherwise a ClassNotFoundException might occur.
+- The .java file to execute to start the CLI is `main.java` located in `./src/main.java`
 
 ### The YAML File for swagger.io
 
@@ -17,12 +19,7 @@ To see the full GUI of the configuration, it is recommended to load it into http
 
 ## Structure and Setup
 
-The general structure of the program is that each item that can be place in its own category, has its own class. 
-Say if we have data stored for Persons, we make a class for Persons. If we store data for a Publication, we make a 
-Publication class and so on. This is done to make the different functions of the program, separate. Divide and conquer. 
-All specific actions that are taken for each class are broken down to separate classes. So a Create operation for a 
-specific object will be in its own class, as would a Read operation and so on. An example would be that Person has a 
-ReadPerson, CreatePerson class and so on. 
+The general structure of the program is that each item that can be place in its own category, has its own class. Say if we have data stored for Persons, we make a class for Persons. If we store data for a Publication, we make a Publication class and so on. This is done to make the different functions of the program, separate. Divide and conquer. All specific actions that are taken for each class are broken down to separate classes. So a Create operation for a specific object will be in its own class, as would a Read operation and so on. An example would be that Person has a ReadPerson, CreatePerson class and so on.
 
 Each layer is separated from one another for security, maintainability and expandability purposes.
 
@@ -52,8 +49,7 @@ The Context Diagram shows the three different users that will be accounted for i
 
 The Container diagram gives us a better idea on how the users access the software and how the data is being passed around.
 There will be a web server that listens for incoming requests, these requests can be from a personal computer, smartphone, tablet, etc.
-These requests are handled by the YAML configuration that was created and depending on the request, the web server will 
-either read/write to a JSON format or to a SQL server. The latter will also be storing information from the Google
+These requests are handled by the YAML configuration that was created and depending on the request, the web server will either read/write to a JSON format or to a SQL server. The latter will also be storing information from the Google
 authentication API that will make user registration a much smother process.
 
 ![](./Diagrams/ContainerDiagram.png)
@@ -73,7 +69,7 @@ The web server is using the YAML config to process requests coming in.
 The database schema consists only of tables that are used in the Java classes. The Firebase API might add some other
 tables the the schema if it would be fully implemented to the system. Since a Person can only borrow a specific publication once
 that means we dont need a middle table for Person and Publication. Otherwise and perhaps later down the road, we want a person
-to be able to borrow the same publication many times. 
+to be able to borrow the same publication many times.
 
 ![](./Diagrams/Schema.png)
 
